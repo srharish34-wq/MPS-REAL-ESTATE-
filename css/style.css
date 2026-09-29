@@ -1135,7 +1135,7 @@ p{ margin:0 0 1em; color:var(--ink); }
   margin-bottom:22px;
   flex:1;
 }
-.document-card .btn{ width:100%; justify-content:center; }
+.document-card .btn{ width:100%; justify-content:center; cursor:pointer; }
 
 .documents-note{
   text-align:center;
@@ -1149,3 +1149,85 @@ p{ margin:0 0 1em; color:var(--ink); }
 @media (max-width:980px){
   .documents-grid{ grid-template-columns:1fr; }
 }
+
+/* =========================================================
+   DOCUMENT DOWNLOAD GATE POPUP
+   ========================================================= */
+.doc-overlay{
+  position:fixed; inset:0;
+  background:rgba(13,43,33,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:100;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .2s ease, visibility .2s ease;
+}
+.doc-overlay.open{ opacity:1; visibility:visible; }
+
+.doc-modal{
+  position:relative;
+  background:var(--white);
+  max-width:440px;
+  width:100%;
+  padding:36px 32px;
+  border-top:3px solid var(--gold);
+  transform:translateY(16px);
+  transition:transform .2s ease;
+}
+.doc-overlay.open .doc-modal{ transform:translateY(0); }
+
+.doc-close{
+  position:absolute;
+  top:14px; right:16px;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  line-height:1;
+  color:var(--muted);
+  cursor:pointer;
+}
+.doc-close:hover{ color:var(--green-deep); }
+
+.doc-modal h3{ font-size:1.25rem; margin-bottom:6px; }
+.doc-modal-sub{ color:var(--muted); font-size:.88rem; margin-bottom:20px; }
+.doc-modal-sub strong{ color:var(--green-deep); }
+
+.doc-form{ display:flex; flex-direction:column; gap:16px; }
+.doc-form label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:.85rem;
+  font-weight:600;
+  color:var(--green-deep);
+}
+.doc-form input{
+  font-family:var(--font-body);
+  font-size:.95rem;
+  padding:11px 12px;
+  border:1px solid var(--hairline);
+  background:var(--white);
+  color:var(--ink);
+  border-radius:2px;
+}
+.doc-form input:focus{
+  outline:2px solid var(--gold);
+  outline-offset:1px;
+}
+.doc-submit{ margin-top:4px; justify-content:center; }
+.doc-note{ font-size:.76rem; color:var(--muted); margin:0; }
+
+.doc-success{
+  display:none;
+  margin-top:18px;
+  padding:14px 16px;
+  background:#f2f8f4;
+  border-left:3px solid var(--gold);
+  color:var(--green-deep);
+  font-size:.88rem;
+}
+.doc-success.show{ display:block; }
+.doc-form.hide{ display:none; }

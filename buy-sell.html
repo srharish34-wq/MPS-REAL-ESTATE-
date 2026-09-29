@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy or Sell a Home | MPS Realty</title>
+<meta name="description" content="Browse every residential and commercial property MPS Realty has available in Chennai — enquire by WhatsApp or download full property details as a PDF.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/buy-sell.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="MPS Realty logo" class="brand-mark">
+      <span class="brand-text">
+        <span class="brand-name">MPS Realty</span>
+        <span class="brand-tag">Your Trusted Property Partner</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Services</button>
+          <ul class="dropdown">
+            <li><a href="services-real-estate.html">Real Estate</a></li>
+            <li><a href="property-management.html">Property Management</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <button class="dropdown-toggle" aria-expanded="false">Properties</button>
+          <ul class="dropdown">
+            <li><a href="resedential.html">Residential</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
+          </ul>
+        </li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <a href="buy-or-sell.html" class="btn btn-gold header-cta is-active">Buy or Sell a Home</a>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ BANNER ============ -->
+  <section class="bs-banner">
+    <div class="bs-banner-media">
+      <img src="images/buy-sell-banner.jpg" alt="Chennai homes and commercial properties">
+    </div>
+    <div class="section-inner bs-banner-content">
+      <p class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Buy or Sell a Home</p>
+      <h1>All Our Available Properties</h1>
+      <p class="bs-banner-lead">Every residential and commercial listing we currently have in Chennai, in one place. Enquire straight to WhatsApp, or download the full details as a PDF.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROPERTIES (rendered by buy-or-sell.js) ============ -->
+  <section class="bs-list">
+    <div class="section-inner">
+      <div id="propertiesList" class="bs-rows">
+        <!-- property rows are injected here by buy-or-sell.js -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="section-inner footer-grid">
+
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="MPS Realty logo" class="footer-logo">
+      <p class="brand-name">MPS Realty</p>
+      <p class="brand-tag">Your Trusted Property Partner</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="residential.html">Residential Properties</a></li>
+        <li><a href="commercial.html">Commercial Properties</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><a href="tel:+919600177749">+91 96001 77749</a></li>
+        <li><a href="tel:+919840215475">+91 98402 15475</a></li>
+        <li><a href="mailto:info@mpsrealty.in">info@mpsrealty.in</a></li>
+        <li><a href="https://www.mpsrealty.in">www.mpsrealty.in</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Office</h4>
+      <p class="footer-address">No: 47, Kalaimani Street,<br>Karthikeyan Nagar, Maduravoyal,<br>Chennai &ndash; 600 095.</p>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> MPS Realty. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING SOCIAL BAR ============ -->
+<div class="social-fab">
+  <a href="tel:+919600177749" class="fab fab-call" aria-label="Call MPS Realty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <a href="https://wa.me/919600177749" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.9.529 3.68 1.447 5.197L2 22l4.933-1.408A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.94 7.94 0 0 1-4.06-1.115l-.29-.172-3.008.859.826-2.965-.19-.304A7.95 7.95 0 1 1 12 20z"/></svg>
+  </a>
+  <a href="https://instagram.com/mpsrealty" target="_blank" rel="noopener" class="fab fab-instagram" aria-label="MPS Realty on Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+  </a>
+</div>
+
+<!-- ============ PROPERTY ENQUIRY POPUP ============ -->
+<div class="bs-overlay" id="bsOverlay">
+  <div class="bs-modal" role="dialog" aria-modal="true" aria-labelledby="bsModalTitle">
+    <button class="bs-close" id="bsClose" aria-label="Close enquiry form">&times;</button>
+    <h3 id="bsModalTitle">Quick Enquiry</h3>
+    <p class="bs-modal-sub" id="bsPropertyLabel">Property: <strong>&mdash;</strong></p>
+
+    <form class="bs-form" id="bsForm">
+      <label>
+        Name
+        <input type="text" name="name" id="bsName" required placeholder="Your full name">
+      </label>
+      <label>
+        Phone
+        <input type="tel" name="phone" id="bsPhone" required placeholder="+91">
+      </label>
+      <button type="submit" class="btn btn-gold bs-submit">Submit Now</button>
+      <p class="bs-note">This opens WhatsApp with your details and the property pre-filled &mdash; just hit send there to reach us.</p>
+    </form>
+
+    <p class="bs-success" id="bsSuccess">Thanks! WhatsApp should have opened with your enquiry ready to send &mdash; if it didn't, call/WhatsApp us directly at <a href="tel:+919600177749">96001 77749</a>.</p>
+  </div>
+</div>
+
+<!-- ============ PDF PREVIEW POPUP ============ -->
+<div class="pdf-overlay" id="pdfOverlay">
+  <div class="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+    <div class="pdf-modal-header">
+      <h3 id="pdfModalTitle">Property Details Preview</h3>
+      <button class="pdf-close" id="pdfClose" aria-label="Close preview">&times;</button>
+    </div>
+    <div class="pdf-frame-wrap">
+      <iframe id="pdfPreviewFrame" title="Property details PDF preview"></iframe>
+    </div>
+    <div class="pdf-modal-actions">
+      <button class="btn btn-outline-dark" id="pdfCancel" type="button">Close</button>
+      <button class="btn btn-gold" id="pdfDownload" type="button">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/buy-sell.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

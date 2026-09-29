@@ -1,0 +1,221 @@
+/* =========================================================
+   SERVICES-EXTRA.CSS
+   Additional styles for services-real-estate.html and
+   property-management.html — built on top of the existing
+   MPS Realty design tokens in style.css. No existing rules
+   are overridden; these are new components only.
+   ========================================================= */
+
+/* ---------- Intro (image + copy) reused pattern ---------- */
+.page-intro{ padding:96px 0 88px; }
+.page-intro .story-grid{ align-items:center; }
+
+/* ---------- Numbered featured service (full row, big) ---------- */
+.featured-service{
+  margin-top:0;
+}
+.featured-service .service-copy .service-number{
+  display:block;
+  font-family:var(--font-display);
+  font-size:1.1rem;
+  color:var(--gold-deep);
+  margin-bottom:10px;
+  letter-spacing:.02em;
+}
+
+/* ---------- Service mini-card grid (03/04/05, 06/07 etc) ---------- */
+.mini-services{ padding:88px 0 0; }
+.mini-services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:8px;
+}
+.mini-services-grid.cols-2{ grid-template-columns:repeat(2,1fr); }
+.mini-card{
+  background:#fbf9f4;
+  border:1px solid var(--hairline);
+  padding:34px 28px;
+  transition:border-color .2s ease, transform .2s ease;
+}
+.mini-card:hover{ border-color:var(--gold); transform:translateY(-3px); }
+.mini-card .service-number{
+  display:block;
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.mini-card h3{ font-size:1.15rem; margin-bottom:10px; }
+.mini-card p{ color:var(--muted); font-size:.92rem; }
+.mini-card .check-list{ margin:14px 0 0; }
+.mini-card .check-list li{ font-size:.88rem; }
+
+/* ---------- Additional solutions (Project Mgmt / Turnkey) ---------- */
+.solutions{
+  padding:88px 0;
+  background:#fbf9f4;
+  border-top:1px solid var(--hairline);
+  border-bottom:1px solid var(--hairline);
+}
+.solutions-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+  margin-top:48px;
+}
+.solution-card{
+  background:var(--white);
+  border:1px solid var(--hairline);
+  border-top:3px solid var(--gold);
+  padding:36px 32px;
+}
+.solution-card .service-number{
+  display:block;
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  color:var(--gold-deep);
+  margin-bottom:12px;
+}
+.solution-card h3{ font-size:1.3rem; margin-bottom:10px; }
+.solution-card p{ color:var(--muted); }
+.solution-card .check-list{ margin:16px 0 20px; }
+.solutions-cta{ text-align:center; margin-top:40px; }
+
+/* ---------- Process steps (reuses .steps-grid but 5 cols) ---------- */
+.steps-grid.cols-5{ grid-template-columns:repeat(5,1fr); }
+
+/* ---------- Benefit band (simple 4-up strip) ---------- */
+.benefit-band{
+  padding:64px 0;
+  border-top:1px solid var(--hairline);
+  border-bottom:1px solid var(--hairline);
+}
+.benefit-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+.benefit-item{
+  text-align:center;
+  padding:0 20px;
+  border-left:1px solid var(--hairline);
+}
+.benefit-item:first-child{ border-left:none; }
+.benefit-item h3{
+  font-size:1rem;
+  color:var(--green-deep);
+  margin:0;
+}
+
+/* ---------- NRI highlight card (visually prominent) ---------- */
+.nri-highlight{
+  border-top:3px solid var(--gold);
+  background:var(--green-deep);
+}
+.nri-highlight .service-copy h3,
+.nri-highlight .service-copy .service-number{ color:var(--white); }
+.nri-highlight .service-copy p{ color:rgba(255,255,255,.8); }
+.nri-highlight .check-list li{ color:rgba(255,255,255,.9); }
+.nri-highlight .check-list li::before{ border-color:var(--gold-bright); }
+
+/* ---------- Checklist with tick glyphs (property management) ---------- */
+.tick-list li{
+  position:relative;
+  padding-left:26px;
+  margin-bottom:10px;
+  font-size:.94rem;
+  color:var(--ink);
+}
+.tick-list li::before{
+  content:"\2713";
+  position:absolute;
+  left:0; top:0;
+  color:var(--gold-deep);
+  font-weight:700;
+}
+
+/* ---------- Service detail (image + content, every service) ---------- */
+.service-detail{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  align-items:center;
+  margin-top:72px;
+}
+.service-detail:first-of-type{ margin-top:8px; }
+.service-detail.reverse .service-detail-media{ order:2; }
+.service-detail.reverse .service-detail-content{ order:1; }
+
+.service-detail-media{
+  border:1px solid var(--hairline);
+  aspect-ratio:4/3;
+  overflow:hidden;
+}
+.service-detail-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s ease;
+}
+.service-detail-media:hover img{ transform:scale(1.04); }
+
+.service-detail-content .service-number{
+  display:block;
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  color:var(--gold-deep);
+  margin-bottom:12px;
+  letter-spacing:.02em;
+}
+.service-detail-content h3{ font-size:1.4rem; margin-bottom:12px; }
+.service-detail-content > p{ color:var(--muted); }
+.service-detail-content .check-list{ margin:18px 0 22px; }
+
+/* NRI highlight variant reused on a .service-detail (still keeps its image) */
+.service-detail.nri-highlight{
+  background:var(--green-deep);
+  border-top:3px solid var(--gold);
+  padding:56px calc((100vw - min(100vw,1180px)) / 2 + 32px);
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  box-sizing:border-box;
+}
+
+.service-detail.nri-highlight .service-detail-content h3,
+.service-detail.nri-highlight .service-detail-content .service-number{ color:var(--white); }
+.service-detail.nri-highlight .service-detail-content > p{ color:rgba(255,255,255,.85); }
+.service-detail.nri-highlight .check-list li{ color:rgba(255,255,255,.9); }
+.service-detail.nri-highlight .check-list li::before{ border-color:var(--gold-bright); }
+.service-detail.nri-highlight .service-detail-media{ border-color:rgba(255,255,255,.25); }
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .mini-services-grid{ grid-template-columns:repeat(2,1fr); }
+  .mini-services-grid.cols-2{ grid-template-columns:1fr; }
+  .solutions-grid{ grid-template-columns:1fr; }
+  .steps-grid.cols-5{ grid-template-columns:repeat(2,1fr); row-gap:36px; }
+  .benefit-grid{ grid-template-columns:repeat(2,1fr); row-gap:28px; }
+  .benefit-item{ border-left:none; }
+
+  /* Service detail: stack image first, then number/heading/description/list */
+  .service-detail,
+  .service-detail.reverse{
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-top:48px;
+  }
+  .service-detail.reverse .service-detail-media,
+  .service-detail.reverse .service-detail-content{ order:0; }
+  .service-detail-media{ min-height:0; }
+}
+@media (max-width:640px){
+  .mini-services-grid{ grid-template-columns:1fr; }
+  .steps-grid.cols-5{ grid-template-columns:1fr; }
+  .benefit-grid{ grid-template-columns:1fr; }
+  .service-detail.nri-highlight{ padding:32px 24px; } 
+}

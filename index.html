@@ -197,21 +197,33 @@
         <span class="document-icon">📄</span>
         <h3>Exclusive Property Mandate (Sale)</h3>
         <p>Our standard agreement for owners who want MPS Realty as the sole agent handling the sale of their property &mdash; covers commission, marketing authority and buyer protection terms.</p>
-        <a href="documents/exclusive-mandate-sale.pdf" class="btn btn-outline-dark btn-sm" download>Download PDF</a>
+        <button type="button" class="btn btn-outline-dark btn-sm doc-download-btn"
+          data-pdf="documents/exclusive-mandate-sale.pdf"
+          data-title="Exclusive Property Mandate (Sale)">
+          Download PDF
+        </button>
       </article>
 
       <article class="document-card">
         <span class="document-icon">📄</span>
         <h3>Exclusive Property Mandate (Rental)</h3>
         <p>Our standard agreement for owners who want MPS Realty as the sole agent handling the rental or lease of their property &mdash; covers commission, marketing authority and confidentiality terms.</p>
-        <a href="documents/exclusive-mandate-rental.pdf" class="btn btn-outline-dark btn-sm" download>Download PDF</a>
+        <button type="button" class="btn btn-outline-dark btn-sm doc-download-btn"
+          data-pdf="documents/exclusive-mandate-rental.pdf"
+          data-title="Exclusive Property Mandate (Rental)">
+          Download PDF
+        </button>
       </article>
 
       <article class="document-card">
         <span class="document-icon">📄</span>
         <h3>Property Management Agreement</h3>
         <p>Our master template for owners who want us to manage tenants, rent collection, maintenance and inspections on their behalf &mdash; especially useful for NRI and outstation owners.</p>
-        <a href="documents/property-management-agreement.pdf" class="btn btn-outline-dark btn-sm" download>Download PDF</a>
+        <button type="button" class="btn btn-outline-dark btn-sm doc-download-btn"
+          data-pdf="documents/property-management-agreement.pdf"
+          data-title="Property Management Agreement">
+          Download PDF
+        </button>
       </article>
 
     </div>
@@ -219,6 +231,30 @@
     <p class="documents-note">These are business templates, not legal advice. We always recommend having a Tamil Nadu advocate review any completed agreement before signing.</p>
   </div>
 </section>
+
+<!-- ============ DOCUMENT DOWNLOAD GATE POPUP ============ -->
+<div class="doc-overlay" id="docOverlay">
+  <div class="doc-modal" role="dialog" aria-modal="true" aria-labelledby="docModalTitle">
+    <button class="doc-close" id="docClose" aria-label="Close">&times;</button>
+    <h3 id="docModalTitle">Quick Details Before Download</h3>
+    <p class="doc-modal-sub" id="docLabel">Document: <strong>&mdash;</strong></p>
+
+    <form class="doc-form" id="docForm">
+      <label>
+        Name
+        <input type="text" name="name" id="docName" required placeholder="Your full name">
+      </label>
+      <label>
+        Phone
+        <input type="tel" name="phone" id="docPhone" required placeholder="+91">
+      </label>
+      <button type="submit" class="btn btn-gold doc-submit">Submit &amp; Download</button>
+      <p class="doc-note">This sends your details to us on WhatsApp and starts your PDF download &mdash; just hit send on WhatsApp to confirm.</p>
+    </form>
+
+    <p class="doc-success" id="docSuccess">Thanks! Your download should have started, and WhatsApp should be open with your request ready to send.</p>
+  </div>
+</div>
 
   <!-- ============ PROPERTY TYPES ============ -->
 <section class="property-types">
@@ -675,7 +711,7 @@
     </div>
   </div>
 </section>
-```html
+
 <!-- ============ SUCCESS STORIES ============ -->
 <section class="success-stories">
   <div class="section-inner">
@@ -688,77 +724,64 @@
         <h3>Land Parcel</h3>
         <p>Maduravoyal, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 18 Days</span>
-        <h3>Residential Plot</h3>
-        <p>Guduvanchery, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 21 Days</span>
-        <h3>Independent House</h3>
-        <p>Tambaram, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 15 Days</span>
-        <h3>Residential Plot</h3>
-        <p>Red Hills, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 27 Days</span>
-        <h3>Land Parcel</h3>
-        <p>Madhavaram, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 19 Days</span>
-        <h3>2BHK Home</h3>
-        <p>Avadi, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 23 Days</span>
-        <h3>Residential Plot</h3>
-        <p>Perungalathur, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 16 Days</span>
-        <h3>Villa Plot</h3>
-        <p>Vandalur, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 26 Days</span>
-        <h3>Independent House</h3>
-        <p>Poonamallee, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 20 Days</span>
-        <h3>Residential Land</h3>
-        <p>Porur, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 17 Days</span>
-        <h3>2BHK Home</h3>
-        <p>Chromepet, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
-
-      <div class="story-item">
-        <span class="story-tag">Sold in 22 Days</span>
-        <h3>Land Parcel</h3>
-        <p>Ambattur, Chennai</p>
+      <div class="story-item placeholder">
+        <span class="story-tag">Add real result</span>
+        <h3>Property Type</h3>
+        <p>Area, Chennai</p>
       </div>
     </div>
   </div>
 </section>
-```
-
 
 <!-- ============ AREAS WE SERVE (with images) ============ -->
 <section class="areas-visual">

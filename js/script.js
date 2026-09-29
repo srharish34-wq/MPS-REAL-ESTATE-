@@ -184,3 +184,78 @@ document.addEventListener("DOMContentLoaded", function () {
 
   calculate();
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const OWNER_WHATSAPP = "919600177749";
+
+  const overlay = document.getElementById("docOverlay");
+  const closeBtn = document.getElementById("docClose");
+  const label = document.getElementById("docLabel");
+  const form = document.getElementById("docForm");
+  const successMsg = document.getElementById("docSuccess");
+  const nameInput = document.getElementById("docName");
+  const phoneInput = document.getElementById("docPhone");
+
+  let activePdf = null;
+  let activeTitle = null;
+
+  function openDocModal(pdfPath, title) {
+    activePdf = pdfPath;
+    activeTitle = title;
+    label.innerHTML = "Document: <strong>" + title + "</strong>";
+    form.reset();
+    form.classList.remove("hide");
+    successMsg.classList.remove("show");
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDocModal() {
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".doc-download-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      openDocModal(btn.getAttribute("data-pdf"), btn.getAttribute("data-title"));
+    });
+  });
+
+  closeBtn.addEventListener("click", closeDocModal);
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) closeDocModal();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && overlay.classList.contains("open")) closeDocModal();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!activePdf) return;
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    // 1) Notify the owner on WhatsApp with who downloaded what
+    const message =
+      "PDF Download Request \u2014 MPS Realty Website\n" +
+      "Document: " + activeTitle + "\n\n" +
+      "Name: " + name + "\n" +
+      "Phone: " + phone;
+    const waUrl = "https://wa.me/" + OWNER_WHATSAPP + "?text=" + encodeURIComponent(message);
+    window.open(waUrl, "_blank");
+
+    // 2) Trigger the actual PDF download
+    const link = document.createElement("a");
+    link.href = activePdf;
+    link.download = "";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    form.classList.add("hide");
+    successMsg.classList.add("show");
+  });
+
+});
